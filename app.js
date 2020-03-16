@@ -1,5 +1,5 @@
-const geocode = require('./geocode');
-const forecast = require('./forecast');
+const geocode = require('./utils/geocode');
+const forecast = require('./utils/forecast');
 
 const address = process.argv[2];
 if(!address) {

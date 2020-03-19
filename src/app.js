@@ -37,7 +37,7 @@ app.get('/help' ,(req, res) => {
     res.render('help', {
         title: 'Help',
         name: 'Yash Jain',
-        msg: 'This is some helpful text.'
+        msg: 'Some Help Message!!'
     });
 });
 
@@ -51,13 +51,13 @@ app.get('/weather' ,(req, res) => {
     geocode(req.query.address, (error, {location, latitude, longitude} = {}) => {
         if(error) {
             return res.send({
-                error: 'Error, Try with another address!'
+                error: 'Error, ' + error
             });
         }
         forecast(latitude, longitude, (error, {summary, temperature, precipProbability} = {}) => {
             if(error) {
                 return res.send({
-                    error: 'Error, Forecast Service is down!'
+                    error: 'Error, ' + error
                 });
             }
             res.send({
